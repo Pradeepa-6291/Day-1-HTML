@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Boxes</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: #111;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .box {
+            width: 120px;
+            height: 80px;
+            background: #ff4d4d;
+            border-radius: 10px;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+        /* Box 1 – Rotation */
+        .box1 {
+            background: #ff4444;
+            animation-name: rotateBox;
+        }
+
+        @keyframes rotateBox {
+            0% { transform: rotate(0deg); }
+            50% { transform: rotate(180deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Box 2 – Opacity */
+        .box2 {
+            background: #44ff44;
+            animation-name: fadeBox;
+        }
+
+        @keyframes fadeBox {
+            0% { opacity: 1; }
+            50% { opacity: 0.2; }
+            100% { opacity: 1; }
+        }
+
+        /* Box 3 – Moving */
+        .box3 {
+            background: #4488ff;
+            position: relative;
+            animation-name: moveBox;
+        }
+
+        @keyframes moveBox {
+            0% { left: 0px; top: 0px; }
+            25% { left: 100px; top: -40px; }
+            50% { left: 0px; top: 40px; }
+            75% { left: -100px; top: -40px; }
+            100% { left: 0px; top: 0px; }
+        }
+
+        /* Box 4 – Zoom In & Zoom Out */
+        .box4 {
+            background: #ffbb33;
+            animation-name: zoomBox;
+        }
+
+        @keyframes zoomBox {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.5); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <div class="box box4"></div>
+
+</body>
+</html>

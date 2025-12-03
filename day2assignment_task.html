@@ -119,12 +119,75 @@
       .timeline-item:nth-child(even) { left:0; }
       .timeline-item::before { left:-10px; right:auto; }
     }
+
+    /* ---------------- DARK MODE ---------------- */
+body.dark {
+  background:#121212;
+  color:#e5e5e5;
+}
+
+body.dark header {
+  background:#0a1a3a;
+}
+
+body.dark .hero::before {
+  opacity:0.45;
+}
+
+body.dark h2, 
+body.dark h3,
+body.dark h4 {
+  color:#ffdd00;
+}
+
+body.dark section, 
+body.dark .mission-vision div,
+body.dark .testimonial,
+body.dark .faq-item label,
+body.dark .stats,
+body.dark footer {
+  background:#1e1e1e !important;
+  color:#e5e5e5;
+}
+
+body.dark .course,
+body.dark .blog-card {
+  background:#1f1f1f;
+  color:#e5e5e5;
+  box-shadow:none;
+}
+
+body.dark input,
+body.dark select,
+body.dark textarea {
+  background:#222;
+  color:white;
+  border:1px solid #555;
+}
+
+body.dark #login-modal .modal-content {
+  background:#1f1f1f;
+  color:white;
+}
+
+body.dark .btn,
+body.dark button,
+body.dark input[type="submit"] {
+  background:#ffdd00 !important;
+  color:#1e3a8a !important;
+}
+
+body.dark a { color:#ffdd00; }
+
+    
+
   </style>
 </head>
 <body>
 
   <header>
     <div class="logo">LearnEdge</div>
+    
     <nav>
       <a href="#home">Home</a>
       <a href="#about">About Us</a>
@@ -135,7 +198,14 @@
       <a href="#contact">Contact</a>
       <a href="#login-modal" onclick="document.getElementById('login-modal').style.display='flex'">Login</a>
     </nav>
-  </header>
+
+    <!-- 🌙 Dark Mode Toggle Button -->
+    <button id="dark-toggle" onclick="toggleDarkMode()"
+      style="padding:8px 15px;background:#ffdd00;color:#1e3a8a;border:none;border-radius:5px;cursor:pointer;font-weight:600;">
+      🌙 Dark Mode
+    </button>
+</header>
+
 
   <section class="hero" id="home">
     <h1>Empowering learners in AI & beyond</h1>
@@ -294,6 +364,18 @@
     </div>
     <p style="text-align:center;margin-top:20px;">&copy; 2025 LearnEdge. All Rights Reserved.</p>
   </footer>
+<script>
+function toggleDarkMode() {
+  document.body.classList.toggle('dark');
+  let btn = document.getElementById("dark-toggle");
+
+  if (document.body.classList.contains("dark")) {
+    btn.innerHTML = "☀ Light Mode";
+  } else {
+    btn.innerHTML = "🌙 Dark Mode";
+  }
+}
+</script>
 
 </body>
 </html>

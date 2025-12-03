@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Cartoon Gallery</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script>
+        // Toggle Dark Mode
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle("dark");
+        }
+    </script>
+
+    <style>
+        .card img {
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        .card:hover img {
+            transform: scale(1.07);
+            filter: brightness(1.1);
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-blue-100 via-pink-100 to-purple-100 
+            dark:from-gray-900 dark:via-gray-800 dark:to-black 
+            min-h-screen transition-all duration-500">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-purple-600 to-pink-600 
+                   text-white py-4 shadow-lg sticky top-0 z-50
+                   dark:from-gray-800 dark:to-gray-700 transition-all duration-500">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-4">
+            <h1 class="text-3xl font-extrabold tracking-wide">Cartoon Gallery</h1>
+
+            <nav class="hidden md:flex space-x-6 text-lg">
+                <a class="hover:text-yellow-300 transition" href="#">Home</a>
+                <a class="hover:text-yellow-300 transition" href="#">Gallery</a>
+                <a class="hover:text-yellow-300 transition" href="#">About</a>
+            </nav>
+
+            <!-- Dark Mode Button -->
+            <button onclick="toggleDarkMode()"
+                class="bg-white text-purple-700 px-3 py-1 font-semibold rounded-lg shadow 
+                       hover:bg-gray-200 transition 
+                       dark:bg-yellow-400 dark:text-black dark:hover:bg-yellow-300">
+                Dark Mode
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="text-center py-10 px-6">
+        <h2 class="text-4xl font-extrabold text-purple-700 dark:text-yellow-300">
+            Explore Amazing Cartoon Characters!
+        </h2>
+        <p class="text-gray-700 dark:text-gray-300 mt-3 text-lg max-w-2xl mx-auto">
+            Enjoy a colorful world of animations, heroes, and timeless classics — all in one place.
+        </p>
+    </section>
+
+    <!-- Fully Responsive Gallery -->
+    <section class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 px-6 pb-16">
+
+        <!-- CARD TEMPLATE (Used for all 6 cards) -->
+        <!-- CHHOTA BHEEM -->
+        <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-xl 
+                    hover:shadow-purple-400 dark:hover:shadow-yellow-500 
+                    overflow-hidden border border-gray-200 dark:border-gray-700
+                    transition-all duration-500">
+            <img class="w-full h-64 object-cover"
+                 src="https://w0.peakpx.com/wallpaper/860/660/HD-wallpaper-chhota-bheem-yellow-background-cartoon-animated.jpg" />
+            <div class="p-5">
+                <h3 class="text-xl font-bold dark:text-white">Chhota Bheem</h3>
+                <p class="text-gray-600 dark:text-gray-300 mt-2">
+                    A brave boy from Dholakpur known for his strength and adventures.
+                </p>
+            </div>
+        </div>
+
+        <!-- NINJA HATTORI -->
+        <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-xl 
+                    hover:shadow-purple-400 dark:hover:shadow-yellow-500 
+                    overflow-hidden border border-gray-200 dark:border-gray-700">
+            <img class="w-full h-64 object-cover"
+                 src="https://media.trakt.tv/images/shows/000/068/535/posters/medium/f275ad20f3.jpg.webp" />
+            <div class="p-5">
+                <h3 class="text-xl font-bold dark:text-white">Ninja Hattori</h3>
+                <p class="text-gray-600 dark:text-gray-300 mt-2">
+                    A ninja who helps Kenichi with clever tricks and skills.
+                </p>
+            </div>
+        </div>
+
+        <!-- HEIDI -->
+        <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-xl 
+                    hover:shadow-purple-400 dark:hover:shadow-yellow-500 
+                    overflow-hidden border border-gray-200 dark:border-gray-700">
+            <img class="w-full h-64 object-cover"
+                 src="https://i.pinimg.com/originals/38/61/ef/3861efb31ff31d7541b4e37e7af565ec.jpg" />
+            <div class="p-5">
+                <h3 class="text-xl font-bold dark:text-white">Heidi</h3>
+                <p class="text-gray-600 dark:text-gray-300 mt-2">
+                    A joyful girl living in the Swiss Alps full of kindness.
+                </p>
+            </div>
+        </div>
+
+        <!-- MOTU PATLU -->
+        <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-xl 
+                    hover:shadow-purple-400 dark:hover:shadow-yellow-500 
+                    overflow-hidden border border-gray-200 dark:border-gray-700">
+            <img class="w-full h-64 object-cover"
+                 src="https://i.pinimg.com/originals/a0/53/3d/a0533dfabfaf6173efe629e62e1c98fc.jpg" />
+            <div class="p-5">
+                <h3 class="text-xl font-bold dark:text-white">Motu Patlu</h3>
+                <p class="text-gray-600 dark:text-gray-300 mt-2">
+                    A comedy duo who always land in funny trouble.
+                </p>
+            </div>
+        </div>
+
+        
+
+    </section>
+
+</body>
+</html>
